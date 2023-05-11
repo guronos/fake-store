@@ -1,27 +1,38 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import MainPage from '@/views/MainPage';
+import FavoritesProducts from '@/views/FavoritesProducts';
+import PageProduct from '@/views/PageProduct';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: MainPage,
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+    path: '/favorites',
+    name: 'favorites',
+    meta: { title: 'Избранное' },
+    /* Для тестирования функционала раскоментировать строки ниже и в адресной строке перейти по маршруту /favorites/bar */
+    // children: [
+    //   { path: 'bar', component: PageProduct,meta: {'title' :'test'}}
+    // ],
+    component: FavoritesProducts,
+  },
+  {
+    path: '/prod/:id',
+    name: 'prod',
+    component: PageProduct,
+    props: true,
+  },
+];
 
 const router = new VueRouter({
-  routes
-})
+  mode: 'history',
+  routes,
+});
 
-export default router
+export default router;

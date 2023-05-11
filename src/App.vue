@@ -1,32 +1,81 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+  <div class="app">
+    <div class="app__wrapper">
+      <header>
+        <NavBar />
+      </header>
+      <main>
+        <router-view />
+      </main>
+    </div>
+    <footer>
+      <BottomNavigation />
+    </footer>
   </div>
 </template>
+<script>
+import NavBar from '@/components/NavBar';
+import BottomNavigation from '@/components/BottomNavigation';
 
+export default {
+  name: 'App',
+  components: { NavBar, BottomNavigation },
+};
+</script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+* {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.app__wrapper {
+  min-height: 100vh;
+  margin-bottom: -96px;
+}
+h1 {
+  font : {
+    style: normal;
+    weight: 500;
+    size: 40px;
+    height: 48px;
+  }
+}
+h2 {
+  font : {
+    style: normal;
+    weight: 500;
+    size: 24px;
+  }
+  line-height: 32px;
+}
+h3 {
+  font: {
+    style: normal;
+    weight: 500;
+    size: 16px;
+  }
+  line-height: 24px;
+}
+.paragraph-style-1 {
+  font: {
+    style: normal;
+    weight: 400;
+    size: 16px;
+  }
+  line-height: 24px;
+  color: #464c58;
 }
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+.paragraph-style-3 {
+  font: {
+    style: normal;
+    weight: 400;
+    size: 12px;
   }
+  line-height: 18px;
 }
 </style>

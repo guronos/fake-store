@@ -31,11 +31,11 @@ export default {
 <style lang="scss">
 .image {
   background-image: url(@/assets/ImageHeader.webp);
-  width: 1920px;
+  max-width: 1920px;
   height: 505px;
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
-  margin-bottom: 70px;
+  margin: 0 auto 70px auto;
 }
 </style>

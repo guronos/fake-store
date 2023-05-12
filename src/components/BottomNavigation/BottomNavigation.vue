@@ -13,9 +13,10 @@ export default {};
 
 <style lang="scss">
 .footer {
-  width: 1920px;
+  max-width: 1920px;
   height: 96px;
   background: #0a1e32;
+  margin: 0 auto;
 }
 .footer-wrap {
   padding: 32px 0;

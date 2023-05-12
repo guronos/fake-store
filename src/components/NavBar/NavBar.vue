@@ -72,4 +72,8 @@ $counter-size: 16px;
     color: #ffffff;
   }
 }
+hr {
+  width: 1920px;
+  margin: 0 auto;
+}
 </style>

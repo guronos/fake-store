@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+    <div>
     <div class="app__wrapper">
       <header>
         <NavBar />
@@ -11,7 +12,7 @@
     <footer>
       <BottomNavigation />
     </footer>
-  </div>
+  </div></div>
 </template>
 <script>
 import NavBar from '@/components/NavBar';
@@ -27,6 +28,9 @@ export default {
 * {
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
+}
+.app {
+  display: flex;
 }
 .container {
   max-width: 1400px;

@@ -34,7 +34,6 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0px;
   gap: 40px;
   flex-wrap: wrap;
   margin: 32px auto 138px auto;

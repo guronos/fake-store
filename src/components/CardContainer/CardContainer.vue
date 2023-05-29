@@ -21,7 +21,7 @@ export default {
     getLink(productItem) {
       this.$router.push({
         name: 'prod',
-        params: { id: productItem.id, meta: { title: 'lol' } },
+        params: { id: productItem.id},
       });
       this.$route.meta.title = productItem.title;
     },
